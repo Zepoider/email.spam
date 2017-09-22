@@ -1,0 +1,24 @@
+#login-form{
+    position: fixed;
+    top: 40%;
+    left: 45%;
+    background: rgba(16, 101, 11, 0.26);
+}
+#login-form h3{
+    text-align: center;
+    margin: 0;
+}
+#login{
+    margin: 0 0 10px 10px;
+}
+#submit{
+    margin: 0 10px 0 0;
+}
+#chat-form{
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+}
+#chat-enter{
+    width: 400px;
+}
