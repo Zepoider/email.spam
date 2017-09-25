@@ -1,7 +1,5 @@
 <?php
-$user = mysqli_connect('localhost', 'root', '', 'php_task');
-
-
+require_once 'config.php';
 ?>
 
 
@@ -45,7 +43,6 @@ if (isset($_POST['submit']) && !empty($login)){
 }else{
     echo ('let checked = false;');
 }
-
   ?>
 
     if (!checked){

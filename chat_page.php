@@ -1,5 +1,5 @@
 <?php
-$user = mysqli_connect('localhost', 'root', '', 'php_task');
+require_once 'config.php';
 
 $message = $_POST['chat_enter'];
 $check_user_querrry = "SELECT * FROM chat_user WHERE status = '1'";
@@ -19,7 +19,6 @@ if (isset($_POST['exit']))
     $offline = "UPDATE chat_user SET status = 0";
     $user_offline = mysqli_query($user, $offline);
     header('location: index.php');
-    die();
 }
 
 $chat_draw_querry = "SELECT * FROM message";
@@ -28,8 +27,8 @@ $chat_draw = mysqli_query($user, $chat_draw_querry);
 while ($chat_draw_array = mysqli_fetch_assoc($chat_draw))
 {
     $id_message = $chat_draw_array['user_id'];
-    $check_user_querrry = "SELECT * FROM chat_user WHERE id = '".$id_message."'";
-    $adduser = mysqli_query($user, $check_user_querrry);
+    $check_user_querry = "SELECT * FROM chat_user WHERE id = '".$id_message."'";
+    $adduser = mysqli_query($user, $check_user_querry);
     $user_value = mysqli_fetch_assoc($adduser);
     $name_user = $user_value['name'];
     echo '<p>'.$name_user.'('.$chat_draw_array['time'].'): '.$chat_draw_array['message'].'</p>';
